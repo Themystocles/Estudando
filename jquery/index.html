@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JQUERY!</title>
+        <link href="styles/main.css" type="text/css" rel="stylesheet"> 
+        <script src="scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <link href="styles/bootstrap.min.css" rel="stylesheet" />
+        <script src="scripts/bootstrap.min.js"></script>
+        <script src="scripts/jquery.validate.min.js"></script>
+       
+        <style>
+                body {
+                    margin: 30px;
+                }
+                .error {
+                    color: red;
+                    font-size: 0.8em;
+                }
+            </style>
+        <script></script>
+    </head>
+    <body>      
+        <form class="form-horizontal">
+                    <div class="form-group">
+                        <h1 class="col-sm-8 control-label">Dados de Cadastro</h1>
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="foto" class="col-sm-2 control-label">Foto</label>
+                        <div class="col-sm-10">
+                            <input type="file" name="foto" id="file" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="NomeCompleto" class="col-sm-2 control-label">Nome Completo</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="NomeCompleto" name="NomeCompleto" class="form-control"  />
+                        </div>
+                        <div class="col-sm-3">
+                            </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Senha" class="col-sm-2 control-label">Senha</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="Senha" name="Senha" class="form-control" />
+                        </div>
+                        <div class="col-sm-3">
+                            </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Comentario" class="col-sm-2 control-label">Comentário</label>
+                        <div class="col-sm-10">
+                            <textarea name="Comentario" id="Comentario" class="form-control" rows="5" cols="40" ></textarea>
+                        </div>
+                        <div class="col-sm-3">
+                            </div>
+                    </div>            
+                    <div class="form-group">
+                        <label for="Sexo" class="col-sm-2 control-label">Sexo</label>
+                        <div class="col-sm-10">
+                            <select name="Sexo" id="Sexo" class="col-sm-10 form-control"> 
+                                <option>Masculino</option>
+                                <option>Feminino</option>                      
+                            </select>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                        <span><b>Qual sua profissão ?</b></span><br />
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="Analista" />Analista de Sistemas</label><!--<br />-->
+                            </div>
+                            <div class="checkbox">
+                                <label><input checked="checked" type="checkbox" value="Desenvolvedor" />Desenvolvedor de Software</label><!--<br />-->
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="Gerente" />Gerente de Projeto</label> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <span><b>Qual linguagem de Programação você mais utiliza ?</b></span><br />
+                    
+                            <div class="radio">
+                                <label><input type="radio" name="ling" value="C#"/> C#</label><br />
+                                </div>
+                            <div class="radio">
+                                <label><input type="radio" name="ling" value="C++"/> C++</label><br />
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="ling" value="Java"/> Java</label><br />
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="ling" value="Nenhuma"/> Nenhuma</label><br />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="messageBox"></div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                            <input type="submit" class="btn btn-primary" value="Submit" />
+                        </div>
+                    </div>
+            
+                    <br />
+                </form> 
+    
+    </body>
+    <script>
+       
+    $('form').validate({
+        rules:{
+        NomeCompleto:{required: true},
+        Senha:{required:true },
+        Comentario:{digits: true, required:true},
+      
+        
+        },
+        messages:{NomeCompleto:{required:"Você precisa por o nome completo"}}
+
+
+
+
+
+    })
+
+
+
+    </script>
+</html>
